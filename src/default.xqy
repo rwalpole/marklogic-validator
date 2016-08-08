@@ -29,9 +29,21 @@ declare function local:get-reports($collection as xs:string) as element() {
     }
 };
 
-xdmp:set-response-content-type("text/html"),
-'<!DOCTYPE html>',
+let $doc := xdmp:get-request-field("doc","")
+let $xpath := xdmp:get-request-field("xpath","")
 let $identifier := xdmp:get-request-field("identifier","")
-let $collection := concat("http://devexe.co.uk/collection/",$identifier)
-let $reports := local:get-reports($collection)
-return transform:transform($reports, "/xslt/schematron.xsl",(concat("collection=",$collection)))
+return
+    if($doc != "")then(
+        xdmp:set-response-content-type("text/xml"),
+        if($xpath != "")then(
+            xdmp:unpath(concat("doc(",$doc,")",$xpath))
+        )else(
+            doc($doc)
+        )
+    )else if($identifier != "")then(
+        xdmp:set-response-content-type("text/html"),
+        '<!DOCTYPE html>',
+        let $collection := concat("http://devexe.co.uk/collection/",$identifier),
+            $reports := local:get-reports($collection)
+        return transform:transform($reports, "/xslt/schematron.xsl",(concat("collection=",$collection)))
+    )else()

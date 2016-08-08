@@ -33,7 +33,7 @@
                             <xsl:variable name="type" select="@role"/>
                             <xsl:variable name="location" select="@location/string()"/>
                             <li class="{concat('list-group-item list-group-item-',if($type='error')then('danger')else('warning'))}">
-                                <a href="{concat('show.xq?doc=',$doc,'&amp;xpath=',$location)}">
+                                <a href="{concat('default.xqy?doc=',$doc,'&amp;xpath=',$location)}">
                                     <xsl:value-of select="svrl:text"/>
                                 </a>
                             </li>
