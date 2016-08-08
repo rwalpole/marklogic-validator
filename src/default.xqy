@@ -1,7 +1,5 @@
 xquery version "1.0-ml" encoding "UTF-8";
 
-
-import module namespace common = "http://devexe.co.uk/xquery/common" at "/modules/common.xqy";
 import module namespace transform = "http://devexe.co.uk/xquery/transform" at "/modules/transform.xqy";
 
 declare namespace app="http://lexisnexis.co.uk/apps/analysis-tool";
@@ -33,18 +31,7 @@ declare function local:get-reports($collection as xs:string) as element() {
 
 xdmp:set-response-content-type("text/html"),
 '<!DOCTYPE html>',
-let $dpsi := xdmp:get-request-field("dpsi","")
-let $title := common:get-leg-title($dpsi)
-let $leg-count := common:count-leg-elems($dpsi)
-let $act-count := $leg-count/@acts/string()
-let $sis-count := $leg-count/@sis/string()
-let $international-count := common:count-international-legislation($dpsi)
-let $collection := concat("http://devexe.co.uk/collection/",$dpsi)
+let $identifier := xdmp:get-request-field("identifier","")
+let $collection := concat("http://devexe.co.uk/collection/",$identifier)
 let $reports := local:get-reports($collection)
-let $xslt-params := (
-    concat("dpsi=",$dpsi),
-    concat("title=",$title),
-    concat("acts=",$act-count),
-    concat("sis=",$sis-count),
-    concat("international=",$international-count))
-return transform:transform($reports, "/xslt/schematron.xsl",$xslt-params)
+return transform:transform($reports, "/xslt/schematron.xsl",(concat("collection=",$collection)))

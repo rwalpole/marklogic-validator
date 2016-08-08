@@ -1,14 +1,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:lnb-leg="http://www.lexisnexis.com/namespace/sslrp/lnb-leg" exclude-result-prefixes="xs" version="3.0">
-    <xsl:param name="dpsi"/>
-    <xsl:param name="title"/>
-    <xsl:param name="acts"/>
-    <xsl:param name="sis"/>
-    <xsl:param name="international"/>
+    <xsl:param name="collection"/>
     <xsl:template match="/reports">
         <html>
             <head>
                 <title>
-                    <xsl:value-of select="concat('Schematron report for ',$dpsi)"/>
+                    <xsl:value-of select="concat('Schematron report for collection ',$collection)"/>
                 </title>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -19,13 +15,8 @@
             <body>
                 <div class="container">
                     <h1>
-                        <xsl:value-of select="concat('Schematron report for ',$title,' (',$dpsi,')')"/>
+                        <xsl:value-of select="concat('Schematron report for collection ',$collection)"/>
                     </h1>
-                    <div class="panel panel-default panel-heading">
-                        <div><xsl:value-of select="concat('Acts: ',$acts)"/></div>
-                        <div><xsl:value-of select="concat('Statutory Instruments: ',$sis)"/></div>
-                        <div><xsl:value-of select="concat('International legislation: ',$international)"/></div>
-                    </div>                    
                     <xsl:apply-templates/>
                 </div>
             </body>
