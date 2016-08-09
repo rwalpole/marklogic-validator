@@ -1,8 +1,10 @@
 xquery version "1.0-ml" encoding "UTF-8";
 
+import module namespace maps = "http://devexe.co.uk/xquery/maps" at "/modules/maps.xqy";
 import module namespace transform = "http://devexe.co.uk/xquery/transform" at "/modules/transform.xqy";
 
 declare namespace app="http://lexisnexis.co.uk/apps/analysis-tool";
+declare namespace map="http://marklogic.com/xdmp/map";
 declare namespace xdmp = "http://marklogic.com/xdmp";
 
 declare option xdmp:output "method = html";
@@ -29,14 +31,38 @@ declare function local:get-reports($collection as xs:string) as element() {
     }
 };
 
+declare function local:get-namespaces-map($xpath as xs:string) as element(map:map) {
+    let $_ := xdmp:log(fn:concat("XPath: ",$xpath))
+    return
+        <map:map>{
+            for $token in tokenize(substring-after($xpath,"/*"),"/\*")
+            let $namespace := tokenize($token,"'")[2]
+            let $prefix := tokenize($namespace,"/")[last()]
+            return maps:get-map-entry($prefix, $namespace)
+        }</map:map>
+
+};
+
+declare function local:get-prefixed-xpath($xpath as xs:string) as xs:string* {
+    for $token in tokenize(substring-after($xpath,"/*"),"/\*")
+    let $namespace := tokenize($token,"'")[2]
+    let $prefix := tokenize($namespace,"/")[last()]
+    return concat("/",$prefix, replace($token,"\[[\(\)=:a-z/'.-]*\]",""))
+};
+
+
+
 let $doc := xdmp:get-request-field("doc","")
 let $xpath := xdmp:get-request-field("xpath","")
 let $identifier := xdmp:get-request-field("identifier","")
 return
     if($doc != "")then(
-        xdmp:set-response-content-type("text/xml"),
+        xdmp:set-response-content-type("application/xml"),
         if($xpath != "")then(
-            xdmp:unpath(concat("doc(",$doc,")",$xpath))
+            let $namespaces := map:map(local:get-namespaces-map($xpath))
+            let $prefixed-xpath := string-join(local:get-prefixed-xpath($xpath))
+            let $doc := doc($doc)
+            return xdmp:unpath(concat("$doc/",$prefixed-xpath), $namespaces)
         )else(
             doc($doc)
         )
