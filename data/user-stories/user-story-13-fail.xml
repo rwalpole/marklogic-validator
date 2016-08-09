@@ -49,7 +49,7 @@
             </lnb-leg:preamble>
             <lnb-leg:main>
                <lnb-leg:provision edpnum-start="3084">
-                  <core:desig value="1">1</core:desig>
+                  <core:desig value="">1</core:desig>
                   <lnb-leg:para1>[For the purposes of section 50(9A)(c) of the British Nationality Act 1981, the prescribed requirement as to proof of paternity is that the person must satisfy the Secretary of State that he is the natural father of the child.]</lnb-leg:para1>
                   <core:comment type="commentary">
                      <core:generic-hd level="5">Amendment</core:generic-hd>
