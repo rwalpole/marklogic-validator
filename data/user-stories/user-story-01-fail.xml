@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tr:pub-pt xmlns:form="http://www.lexisnexis.com/namespace/sslrp/form"
+           xmlns:ls="http://www.lexisnexis.com/namespace/sslrp/ls"
+           xmlns:tr="http://www.lexisnexis.com/namespace/sslrp/tr"
+           xmlns:lnbdig-case="http://www.lexisnexis.com/namespace/sslrp/lnbdig-case"
+           xmlns:lnci="http://www.lexisnexis.com/namespace/common/lnci"
+           xmlns:se="http://www.lexisnexis.com/namespace/sslrp/se"
+           xmlns:m="http://www.w3.org/1998/Math/MathML"
+           xmlns:pnfo="http://www.lexisnexis.com/namespace/sslrp/pnfo"
+           xmlns:in="http://www.lexisnexis.com/namespace/sslrp/in"
+           xmlns:header="http://www.lexisnexis.com/namespace/sslrp/header"
+           xmlns:lnb-leg="http://www.lexisnexis.com/namespace/sslrp/lnb-leg"
+           xmlns:fm="http://www.lexisnexis.com/namespace/sslrp/fm"
+           xmlns:di="http://www.lexisnexis.com/namespace/sslrp/di"
+           xmlns:lnb-case="http://www.lexisnexis.com/namespace/sslrp/lnb-case"
+           xmlns:su="http://www.lexisnexis.com/namespace/sslrp/su"
+           xmlns:pu="http://www.lexisnexis.com/namespace/sslrp/pu"
+           xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
+           xmlns:em="http://www.lexisnexis.com/namespace/sslrp/em"
+           xmlns:fn="http://www.lexisnexis.com/namespace/sslrp/fn"
+           xmlns:glph="http://www.lexisnexis.com/namespace/sslrp/glph"
+           xmlns:nl="http://www.lexisnexis.com/namespace/sslrp/nl"
+           xmlns:ps="http://www.lexisnexis.com/namespace/sslrp/ps"
+           lni="4WX9-GKC0-R03K-91S9-00000-00"
+           pub-acronym="BILS"
+           volnum="Binder_01/Division_E">
+    <core:no-title/>
+    <tr:ch>
+        <lnb-leg:legislation>
+            <header:metadata type="legislation">
+                <header:metadata-item name="normcite" value="1987_177s"/>
+            </header:metadata>
+            <lnb-leg:si si-type="order">
+                <lnb-leg:prelims>
+                    <lnb-leg:officialname>
+                        <core:title>Immigration (Ports of Entry) Order 1987</core:title>
+                    </lnb-leg:officialname>
+                    <lnb-leg:officialnum>SI 1987/177</lnb-leg:officialnum>
+                    <lnb-leg:made>Date <core:date day="10" month="Feb" year="1987">10 February
+                            1987</core:date>
+               </lnb-leg:made>
+                    <lnb-leg:laid>Authority Immigration Act 1971, s 33(3)</lnb-leg:laid>
+                    <lnb-leg:operation repealed-revoked="no">Commencement <core:date day="1" month="Mar" year="1987">1 March 1987</core:date> (art
+                        1(1))</lnb-leg:operation>
+                </lnb-leg:prelims>
+                <lnb-leg:main>
+                    <lnb-leg:provision edpnum-start="425">
+                        <core:desig value="1">1</core:desig>
+                        <lnb-leg:para1>
+                     <core:enum>(1)</core:enum>This Order may be cited as the
+                            Immigration (Ports of Entry) Order 1987 and shall come into force on 1
+                            March 1987.</lnb-leg:para1>
+                        <lnb-leg:para1>
+                     <core:enum>(2)</core:enum>The Immigration (Ports of Entry)
+                            Order 1972, the Immigration (Ports of Entry) (Amendment) Order 1975 and
+                            the Immigration (Ports of Entry) (Amendment) Order 1979 are hereby
+                            revoked.</lnb-leg:para1>
+                    </lnb-leg:provision>
+                    <lnb-leg:provision edpnum-start="426">
+                        <core:desig value="2">2</core:desig>
+                        <lnb-leg:para1>The ports specified in the Schedule to this Order shall be
+                            ports of entry for the purposes of the Immigration Act
+                            1971.</lnb-leg:para1>
+                    </lnb-leg:provision>
+                </lnb-leg:main>
+                <lnb-leg:schedule-grp>
+                    <lnb-leg:schedule>
+                        <core:title>Schedule<core:nl/>Ports of Entry</core:title>
+                        <table colsep="0"
+                         edpnum-end="576"
+                         edpnum-start="427"
+                         frame="none"
+                         rowsep="0">
+                            <tgroup cols="2">
+                                <colspec colname="C1" colnum="1" colwidth="305.75pt"/>
+                                <colspec colname="C2" colnum="2" colwidth="293.76pt"/>
+                                <tbody>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>
+                                                <core:emph typestyle="it">Seaports and
+                                                  Hoverports</core:emph>
+                                            </core:para>
+                                        </entry>
+                                        <entry colname="C2"/>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Dover</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Plymouth</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Felixstowe</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Portsmouth</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Folkestone</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Ramsgate</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Harwich</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Sheerness</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Hull</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Southampton</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>London</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Tyne</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Newhaven</core:para>
+                                        </entry>
+                                        <entry colname="C2"/>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                        <table colsep="0" frame="none" rowsep="0">
+                            <tgroup cols="2">
+                                <colspec colname="C1" colnum="1" colwidth="51*"/>
+                                <colspec colname="C2" colnum="2" colwidth="49*"/>
+                                <tbody>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>
+                                                <core:emph typestyle="it">Airports</core:emph>
+                                            </core:para>
+                                        </entry>
+                                        <entry colname="C2"/>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Aberdeen</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Leeds/Bradford</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Belfast</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Liverpool</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Birmingham</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Luton</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Bournemouth (Hurn)</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Manchester</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Bristol</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Newcastle</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Cardiff (Wales)</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Norwich</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>East Midlands</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Prestwick</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Edinburgh</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Southampton</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Gatwick-London</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Southend</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Glasgow</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Stansted-London</core:para>
+                                        </entry>
+                                    </row>
+                                    <row>
+                                        <entry colname="C1">
+                                            <core:para>Heathrow-London</core:para>
+                                        </entry>
+                                        <entry colname="C2">
+                                            <core:para>Tees-side</core:para>
+                                        </entry>
+                                    </row>
+                                </tbody>
+                            </tgroup>
+                        </table>
+                    </lnb-leg:schedule>
+                </lnb-leg:schedule-grp>
+            </lnb-leg:si>
+        </lnb-leg:legislation>
+    </tr:ch>
+</tr:pub-pt>
