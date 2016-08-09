@@ -436,12 +436,13 @@
          </xsl:otherwise>
       </xsl:choose>
 
-		    <!--ASSERT -->
+		    <!--ASSERT error-->
       <xsl:choose>
          <xsl:when test="header:metadata-item[@name='normcite']"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                 test="header:metadata-item[@name='normcite']">
+               <xsl:attribute name="role">error</xsl:attribute>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -759,12 +760,13 @@
                        context="lnb-leg:act|lnb-leg:si"
                        role="error"/>
 
-		    <!--ASSERT -->
+		    <!--ASSERT error-->
       <xsl:choose>
          <xsl:when test="not(contains(@acronym,'&amp;'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                 test="not(contains(@acronym,'&amp;'))">
+               <xsl:attribute name="role">error</xsl:attribute>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
