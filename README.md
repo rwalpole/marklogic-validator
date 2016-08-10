@@ -66,7 +66,7 @@ To access your Schematron report enter the MarkLogic hostname and application po
 
 ![](img/validator.jpg)
 
-Files that pass validation are shown with a green background and files that fail are shown with a yellow background. Errors are shown with a red background and warnings with a yellow backgroun. Clicking on the error or warning will show the XML of the section of file that is failing validation.  
+Files that pass validation are shown with a green background and files that fail are shown with a yellow background. Errors are shown with a red background and warnings with a yellow background. Clicking on the error or warning will show the XML of the section of file that is failing validation.  
 
 **Special Notes**
 
