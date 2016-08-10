@@ -9,6 +9,8 @@ The following command line tools should be installed. It is recommended to add t
 - [cURL](https://curl.haxx.se/)
 - [MarkLogic Content Pump](https://developer.marklogic.com/products/mlcp)
 
+If you are a Windows user it is recommended that you install [Cygwin](https://www.cygwin.com/) in order to access cURL.  
+
 **Also required**
 
 - XML files for validation
@@ -16,10 +18,7 @@ The following command line tools should be installed. It is recommended to add t
 
 \*Must be placed in the `src\schematron` sub directory of the project.   
 
-If you are a Windows user it is recommended that you install [Cygwin](https://www.cygwin.com/) in order to access cURL.  
-
-
-**Deploying the tool:**
+**Deploying the tool**
 
 The following commands assume you are working from the base directory of the this project and make use of the config files in the `config` subdirectory. Make sure that the correct hostname has been entered in the `modules-forest.xml` and `content-forest.xml` files and that an available port number has been entered in the `http-server.xml` file.
 
@@ -47,7 +46,7 @@ To create the HTTP server:
 
 *Please note* that if the [Management API](https://docs.marklogic.com/REST/management) of the MarkLogic server cannot be accessed via HTTP then the properties in the config files will need to manually entered into the [Admin Interface](https://docs.marklogic.com/guide/admin/admin_inter).
 
-**Populating the modules database:**
+**Populating the modules database**
 
 The modules database contains all of the source code (XQuery, XSLT and Schematron) needed to run the validator tool.
 
@@ -55,7 +54,7 @@ Before loading these files make sure that your Schematron XSLT has been placed i
 
 These files are loaded into the database using MarkLogic Content Pump. For convenience there are Windows batch and Unix shell script files for performing this task. Run either `load-modules.bat` or `load-modules.sh` as appropriate.
 
-**Populating the content database:**
+**Populating the content database**
 
 The content database contains all of the data which the app needs. 
 
@@ -73,7 +72,7 @@ To access your Schematron report enter the MarkLogic hostname and application po
 
 Files that pass validation are shown with a green background and files that fail are shown with a yellow background. Errors are shown with a red background and warnings with a yellow backgroun. Clicking on the error or warning will show the XML of the section of file that is failing validation.  
 
-**Special Notes:**
+**Special Notes**
 
 1. The application root should always be a URI, e.g. `http://devexe.co.uk/apps/validator`
 2. The URI for data files should be set to something appropriate during ingest via MLCP using the `-output_uri_replace` parameter. e.g. `http://devexe.co.uk/data/user-stories`
