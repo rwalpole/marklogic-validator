@@ -8,6 +8,9 @@ The following command line tools should be installed. It is recommended to add t
 
 - [cURL](https://curl.haxx.se/)
 - [MarkLogic Content Pump](https://developer.marklogic.com/products/mlcp)
+
+**Also required**
+
 - XML files for validation
 - An XSLT Schematron file to validate with*
 
