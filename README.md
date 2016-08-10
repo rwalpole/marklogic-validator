@@ -52,17 +52,13 @@ The modules database contains all of the source code (XQuery, XSLT and Schematro
 
 Before loading these files make sure that your Schematron XSLT has been placed into the `src/schematron` directory of the project.
 
-These files are loaded into the database using MarkLogic Content Pump. For convenience there are Windows batch and Unix shell script files for performing this task. Run either `load-modules.bat` or `load-modules.sh` as appropriate.
+These files are loaded into the database using MarkLogic Content Pump. For convenience there are Windows batch and Unix shell script files for performing this task. Run either `load-modules.bat` or `load-modules.sh` as appropriate. When using these files you will need to pass in a username, password, hostname, XDBC port and source path. The default XDBC port in MarkLogic is 8000. The source path should be the full path to the `src` directory of this project.
 
 **Populating the content database**
 
-The content database contains all of the data which the app needs. 
+The content database contains all of the data which the app needs. There are also script files available for loading content (see `load-content.bat` and `load-content.sh`). When using these files you will need to pass in a username, password, hostname, XDBC port, identifier and source path. The identifier should be a string which will be used to identify the collection of files. The source path should be the full path to the XML files being loaded.
 
-    mlcp import -host {hostname} -port {port} -username {username} -password {password} -database rosetta-content -input_file_path C:\{path}\data\rosetta -output_permissions "CA-Developer-Role,read,Tester,read,Editorial,read" -output_uri_replace "/C:/{path},'http://lexisnexis.co.uk'" -output_collections rosetta-xml
-
-For running mlcp commands there are parametrised batch files written for each database and environment in the root directory of this project. These can be modified and run from the command line to save having to type out all of the arguments for each set of data being loaded.
-
-It is also possible to bulk load multiple directories of content into the QA Tool using the [MLCP Bulk Loader](https://github.com/rwalpole/mlcp-bulk-loader). For convenience a compiled copy of the JAR file for this is available in the `lib` directory of this project.
+It is also possible to bulk load multiple directories of content into the validator using the [MLCP Bulk Loader](https://github.com/rwalpole/mlcp-bulk-loader).
 
 **Usage**
 
