@@ -3,28 +3,27 @@ xquery version "1.0-ml" encoding "UTF-8";
 import module namespace maps = "http://devexe.co.uk/xquery/maps" at "/modules/maps.xqy";
 import module namespace transform = "http://devexe.co.uk/xquery/transform" at "/modules/transform.xqy";
 
-declare namespace app="http://lexisnexis.co.uk/apps/analysis-tool";
 declare namespace map="http://marklogic.com/xdmp/map";
 declare namespace xdmp = "http://marklogic.com/xdmp";
 
 declare option xdmp:output "method = html";
 declare option xdmp:mapping "false";
 
-declare variable $app:ERROR := xs:QName("app:error");
+declare variable $base-uri := "http://devexe.co.uk";
 
-declare function local:get-report($doc as node(), $uri as xs:string) as element(report) {
-    <report doc="{fn:base-uri($doc)}">{
-        transform:transform($doc, "/schematron/kepler-pluto-commentary.xsl","")
+declare function local:get-report($doc as node(), $doc-uri as xs:string, $schematron as xs:string) as element(report) {
+    <report doc="{$doc-uri}">{
+        transform:transform($doc, concat("/schematron/",$schematron),"")
     }</report>
 };
 
-declare function local:get-reports($collection as xs:string) as element() {
+declare function local:get-reports($collection as xs:string, $schematron as xs:string) as node() {
     try{
         <reports>{
             for $doc in fn:collection($collection)/*
-            let $uri := fn:base-uri($doc)
-            order by $uri return
-                local:get-report($doc, $uri)
+            let $doc-uri := fn:base-uri($doc)
+            order by $doc-uri return
+                local:get-report($doc, $doc-uri, $schematron)
         }</reports>
     } catch ($exception) {
         "Problem loading file, received the following exception: ", $exception
@@ -50,11 +49,10 @@ declare function local:get-prefixed-xpath($xpath as xs:string) as xs:string* {
     return concat("/",$prefix, replace($token,"\[[\(\)=:a-z/'.-]*\]",""))
 };
 
-
-
-let $doc := xdmp:get-request-field("doc","")
-let $xpath := xdmp:get-request-field("xpath","")
-let $identifier := xdmp:get-request-field("identifier","")
+let $doc := xdmp:get-request-field("doc",""),
+    $xpath := xdmp:get-request-field("xpath",""),
+    $identifier := xdmp:get-request-field("identifier",""),
+    $schematron := xdmp:get-request-field("schematron","")
 return
     if($doc != "")then(
         xdmp:set-response-content-type("application/xml"),
@@ -66,10 +64,10 @@ return
         )else(
             doc($doc)
         )
-    )else if($identifier != "")then(
+    )else if($identifier != "" and $schematron != "")then(
         xdmp:set-response-content-type("text/html"),
         '<!DOCTYPE html>',
-        let $collection := concat("http://devexe.co.uk/collection/",$identifier),
-            $reports := local:get-reports($collection)
+        let $collection := concat($base-uri,"/collection/",$identifier),
+            $reports := local:get-reports($collection, $schematron)
         return transform:transform($reports, "/xslt/schematron.xsl",(concat("collection=",$collection)))
     )else()

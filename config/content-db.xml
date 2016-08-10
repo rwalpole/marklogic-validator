@@ -1,0 +1,3 @@
+<database-properties xmlns="http://marklogic.com/manage">
+    <database-name>validator-content</database-name>
+</database-properties>

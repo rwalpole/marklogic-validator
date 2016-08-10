@@ -4,7 +4,7 @@
         <html>
             <head>
                 <title>
-                    <xsl:value-of select="concat('Schematron report for collection ',$collection)"/>
+                    <xsl:value-of select="'Schematron Report'"/>
                 </title>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -15,8 +15,9 @@
             <body>
                 <div class="container">
                     <h1>
-                        <xsl:value-of select="concat('Schematron report for collection ',$collection)"/>
+                        <xsl:value-of select="'Schematron Report'"/>
                     </h1>
+                    <p><strong><xsl:value-of select="concat('Collection: ',$collection)"/></strong></p>
                     <xsl:apply-templates/>
                 </div>
             </body>

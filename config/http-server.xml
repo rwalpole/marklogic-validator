@@ -1,0 +1,8 @@
+<http-server-properties xmlns="http://marklogic.com/manage">
+    <server-name>validator</server-name>
+    <root>http://devexe.co.uk/apps/validator</root>
+    <!-- enter an available server port for the app below -->
+    <port></port>
+    <modules-database>validator-modules</modules-database>
+    <content-database>validator-content</content-database>
+</http-server-properties>
